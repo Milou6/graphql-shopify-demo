@@ -1,0 +1,169 @@
+@use "./_typescales" as ts;
+
+@use "./variables" as *;
+
+// Variables
+$line-height-titles: 1.2;
+$line-height-body: 1.5;
+
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+
+.rampart-one-regular {
+  font-family: "Rampart One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+  font-size: 16px;
+  @media screen and (max-width: $bp-tablet) {
+    font-size: 14px;
+  }
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: calc($line-height-body * ts.$body-font-size * 2);
+  margin-bottom: calc($line-height-body * ts.$body-font-size);
+  line-height: $line-height-titles;
+  letter-spacing: -0.05em;
+}
+
+.display-large {
+  @include ts.display-large;
+  font-weight: $font-weight-medium;
+}
+.display-medium {
+  @include ts.display-medium;
+  font-weight: $font-weight-medium;
+}
+.display-small {
+  @include ts.display-small;
+  font-weight: $font-weight-medium;
+}
+
+.title-large {
+  @include ts.title-large;
+  font-weight: $font-weight-medium;
+}
+.title-medium {
+  @include ts.title-medium;
+  font-weight: $font-weight-medium;
+}
+.title-small {
+  @include ts.title-small;
+  font-weight: $font-weight-medium;
+}
+
+h1 {
+  @include ts.display-large;
+  font-weight: $font-weight-regular;
+}
+
+h2 {
+  @include ts.display-medium;
+  font-weight: $font-weight-regular;
+}
+
+h3 {
+  @include ts.display-small;
+  font-weight: $font-weight-regular;
+}
+
+h4 {
+  @include ts.headline-large;
+  font-weight: $font-weight-regular;
+}
+
+h5 {
+  @include ts.headline-medium;
+  font-weight: $font-weight-medium;
+}
+
+h6 {
+  @include ts.headline-small;
+  font-weight: $font-weight-medium;
+}
+
+// Labels
+.label-large,
+.label-medium,
+.label-small {
+  margin: 0;
+  letter-spacing: -0.05em;
+  font-weight: 100;
+}
+
+.label-large {
+  @include ts.label-large;
+}
+.label-medium {
+  @include ts.label-medium;
+}
+.label-small {
+  @include ts.label-small;
+}
+
+// Body
+body {
+  @include ts.body-medium;
+  line-height: $line-height-body;
+  letter-spacing: 0.25pt;
+}
+
+.body-large {
+  @include ts.body-large;
+}
+.body-medium {
+  @include ts.body-medium;
+}
+.body-small {
+  @include ts.body-small;
+}
+
+p {
+  max-width: 65ch;
+  margin: calc($line-height-body * ts.$body-font-size) 0;
+}
+
+ul,
+ol {
+  max-width: 65ch;
+}
+
+a {
+  @include ts.label-large;
+  font-weight: 700;
+  text-decoration: none;
+  user-select: none;
+  color: var(--secondary);
+}
+
+// Article specific styles
+article a,
+figcaption a,
+a.link {
+  text-decoration: underline;
+  font-weight: inherit;
+}
+
+article a {
+  @include ts.body-medium;
+  &:visited {
+    color: var(--tertiary);
+  }
+}

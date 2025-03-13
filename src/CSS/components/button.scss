@@ -1,0 +1,104 @@
+@use "../_utils" as *;
+@use "../_variables" as *;
+@use "../_colors" as *;
+
+@use "../color_scheme.scss";
+
+button {
+  @include flex-center;
+  gap: 5px;
+  background-color: unset;
+  border: unset;
+  border-radius: $border-radius-s;
+  cursor: pointer;
+  padding: 7px 10px;
+  font-weight: 700;
+
+  &:disabled {
+    cursor: unset;
+    opacity: 0.4;
+  }
+}
+
+@each $color-role, $on-color-role in $material-roles {
+  // .btn-primary, .btn-secondary, etc...
+  .btn-#{$color-role} {
+    @extend .#{$color-role}-container;
+
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--#{$color-role}Container),
+        var(--#{$on-color-role}Container) 8%
+      );
+    }
+    &:active,
+    &:focus {
+      background-color: color-mix(
+        in srgb,
+        var(--#{$color-role}Container),
+        var(--#{$on-color-role}Container) 10%
+      );
+    }
+
+    .loader {
+      border: 3px solid var(--#{$on-color-role}Container) !important;
+      border-bottom-color: transparent !important;
+    }
+  }
+
+  // .btn-primary-outline, .btn-secondary-outline, etc...
+  .btn-#{$color-role}-outline {
+    border: 1px solid var(--outline);
+    color: var(--#{$color-role});
+
+    &:hover {
+      border: 1px solid var(--#{$color-role});
+      background-color: color-mix(
+        in srgb,
+        var(--surface),
+        var(--#{$on-color-role}Container) 8%
+      );
+    }
+    &:active,
+    &:focus {
+      border: 1px solid var(--#{$color-role});
+      background-color: color-mix(
+        in srgb,
+        var(--surface),
+        var(--#{$on-color-role}Container) 20%
+      );
+    }
+
+    .loader {
+      border: 3px solid var(--#{$color-role}) !important;
+      border-bottom-color: transparent !important;
+    }
+  }
+}
+
+// THEME OVERRIDES
+button {
+  all: unset;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-align: center;
+  font: inherit;
+  background: none;
+  border: none;
+  border-radius: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  box-shadow: none;
+  appearance: none;
+}
+
+.btn-icon {
+  border: 2px solid black;
+  border-radius: 1000px;
+  width: 25px;
+  height: 25px;
+}

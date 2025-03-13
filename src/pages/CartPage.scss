@@ -1,0 +1,120 @@
+@use "/src/CSS/colors" as *;
+@use "/src/CSS/variables" as *;
+
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    .title {
+      margin-bottom: 0;
+    }
+    a {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      &:hover {
+        text-decoration-thickness: 2px;
+      }
+    }
+  }
+
+  table {
+    border-spacing: 0rem 1.5rem;
+    border-bottom: 1px solid rgb(229, 229, 229);
+
+    thead tr {
+      //   display: flex;
+      justify-content: space-between;
+    }
+
+    // thead {
+    //   border-bottom: 1px solid rgb(229, 229, 229);
+    // }
+
+    thead th {
+      flex-grow: 1;
+      flex: 1;
+      text-align: left;
+      margin-bottom: 10px;
+      color: var(--outline);
+      border-bottom: 1px solid rgb(229, 229, 229);
+
+      &:first-child {
+        text-align: left;
+      }
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    tbody {
+      tr {
+        //   display: flex;
+
+        .td-img > div {
+          display: flex;
+          gap: 20px;
+          width: fit-content;
+
+          img {
+            width: 120px;
+            border-radius: 10px;
+          }
+          div {
+            white-space: nowrap;
+          }
+
+          @media screen and (max-width: $bp-mobile) {
+            gap: 10px;
+            img {
+              width: 100px;
+              aspect-ratio: 1/1;
+            }
+            div {
+              white-space: wrap;
+            }
+          }
+        }
+
+        .td-quantity {
+          display: flex;
+        }
+
+        .td-subtotal {
+          text-align: right;
+          // min-width: 170px;
+          vertical-align: top;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .cart-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px;
+
+    button {
+      padding: 10px 10px;
+      border-radius: 5px;
+      min-width: 250px;
+    }
+  }
+
+  .mobile-only {
+    @media screen and (min-width: 850px) {
+      display: none !important;
+    }
+  }
+  .desktop-only {
+    @media screen and (max-width: 850px) {
+      display: none !important;
+    }
+  }
+}

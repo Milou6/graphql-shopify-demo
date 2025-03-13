@@ -1,0 +1,82 @@
+@use "./_utils" as *;
+@use "./_variables" as *;
+@use "./_colors" as *;
+
+@use "./color_scheme.scss";
+
+@use "./components/button.scss";
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.text-link {
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a.icon-link {
+  opacity: 0.6;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+a.nav-link {
+  border-bottom: 1.5px solid transparent;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.2s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+  &.active::after {
+    width: 100%;
+  }
+
+  // &:hover {
+  //   // color: color-mix(in srgb, var(--primaryContainer), var(--onPrimaryContainer) 8%);
+  //   border-bottom: 1.5px solid var(--primary);
+  // }
+  // &:active,
+  // &:focus {
+  //   color: color-mix(in srgb, var(--primaryContainer), var(--onPrimaryContainer) 10%);
+  // }
+}
+
+input,
+textarea {
+  padding: 10px;
+  border-radius: $border-radius-s;
+  border: 1px solid var(--outline);
+  background-color: var(--surface);
+  color: var(--onSurface);
+}

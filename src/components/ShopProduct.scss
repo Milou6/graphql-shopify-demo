@@ -1,0 +1,33 @@
+@use "@/CSS/_Variables" as *;
+
+:root {
+  --grid-horiz-space: calc((100% - 3 * 10px) / 4);
+
+  @media screen and (max-width: $bp-mobile) {
+    --grid-horiz-space: calc((100% - 1 * 10px) / 2);
+  }
+}
+
+.shop-product {
+  display: flex;
+  flex-direction: column;
+  width: var(--grid-horiz-space);
+
+  img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 10px;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    .prod-title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.prod-variants {
+  display: flex;
+}

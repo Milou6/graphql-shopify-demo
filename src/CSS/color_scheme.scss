@@ -1,0 +1,55 @@
+@use './_variables' as *;
+@use './_colors' as *;
+
+:root {
+  background-color: var(--surface);
+  color: var(--onSurface);
+}
+
+@each $color-role, $on-color-role in $material-roles {
+  // .primary, .secondary, etc...
+  .#{$color-role} {
+    background-color: var(--#{$color-role});
+    color: var(--#{$on-color-role});
+  }
+
+  // .text-primary, .text-secondary, etc...
+  .text-#{$color-role} {
+    color: var(--#{$color-role});
+  }
+}
+
+.primary-container {
+  background-color: var(--primaryContainer);
+  color: var(--onPrimaryContainer);
+  box-shadow: 0px 0px 3px 1px color-mix(in srgb, var(--shadow) 12%, transparent);
+}
+.secondary-container {
+  background-color: var(--secondaryContainer);
+  color: var(--onSecondaryContainer);
+}
+.tertiary-container {
+  background-color: var(--tertiaryContainer);
+  color: var(--onTertiaryContainer);
+}
+
+.surface-container-lowest {
+  background-color: var(--surfaceContainerLowest);
+}
+.surface-container-low {
+  background-color: var(--surfaceContainerLow);
+}
+.surface-container-high {
+  background-color: var(--surfaceContainerHigh);
+}
+.surface-container-highest {
+  background-color: var(--surfaceContainerHighest);
+}
+
+.on-surface-variant {
+  color: var(--outline);
+}
+
+.error {
+  color: var(--error);
+}

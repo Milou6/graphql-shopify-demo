@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 30px;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+}
+
+.logo {
+  margin: 0;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+
+  .link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .cart-icon {
+    position: relative;
+
+    .cart-qty-indicator {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: -6px;
+      right: -5px;
+      width: 15px;
+      height: 15px;
+
+      background-color: var(--secondaryContainer);
+      border-radius: 10px;
+      color: black;
+      font-size: 9px;
+    }
+  }
+}
