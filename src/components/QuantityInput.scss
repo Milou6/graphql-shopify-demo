@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  // max-height: 46px;
 
   .item-qty {
     display: flex;
@@ -10,7 +9,7 @@
     justify-content: space-between;
     font-weight: 100;
 
-    // width: 140px;
+    min-width: 105px;
     padding: 0px 0px;
 
     border: 1px solid var(--outline);

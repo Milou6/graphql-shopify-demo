@@ -1,6 +1,8 @@
+@use "@/CSS/_variables" as *;
+
 .footer {
-  background-color: #cccccc;
-  color: white;
+  background-color: #d3e0e8;
+  // color: white;
   padding: 20px 0;
   text-align: center;
 }
@@ -9,7 +11,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  @media screen and (min-width: $bp-mobile) {
+    gap: 10px;
+  }
+}
+
+.logo-svg {
+  width: 600px;
+  margin-top: 20px;
 }
 
 .footer-text {
@@ -22,7 +31,8 @@
 }
 
 .footer-link {
-  color: white;
+  // color: var(--secondary);
+  font-weight: 100;
   text-decoration: none;
   font-size: 14px;
 }
@@ -32,6 +42,7 @@
 }
 
 .footer-social {
+  margin-top: 10px;
   display: flex;
   gap: 10px;
 }

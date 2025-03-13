@@ -11,7 +11,12 @@ const Header = () => {
   return (
     <nav className="navbar">
       <Link to="/">
-        <h4 className="rampart-one-regular logo">Shopify Store</h4>
+        <img
+          className="header-logo-svg"
+          src="/logo-no-background.svg"
+          alt="SnowStore logo"
+        />
+        {/* <h4 className="rampart-one-regular logo">Shopify Store</h4> */}
       </Link>
 
       <ProductSearch></ProductSearch>

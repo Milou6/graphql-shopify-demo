@@ -52,7 +52,10 @@ const DetailedProduct = () => {
                     </div>
                   </div>
 
-                  <AddToCartButton variantId={variant?.id}>
+                  <AddToCartButton
+                    className="btn-primary"
+                    variantId={variant?.id}
+                  >
                     Add to cart
                   </AddToCartButton>
                 </div>

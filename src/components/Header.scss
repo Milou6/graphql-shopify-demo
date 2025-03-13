@@ -1,15 +1,28 @@
+@use "@/CSS/_variables" as *;
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 30px;
   border-bottom: 1px solid #ddd;
   position: relative;
+  gap: 10px;
+
+  padding: 5px 30px;
+  @media screen and (max-width: $bp-tablet) {
+    padding: 5px 10px;
+  }
 }
 
-.logo {
-  margin: 0;
+.header-logo-svg {
+  @media screen and (max-width: $bp-tablet) {
+    width: 150px;
+  }
 }
+
+// .logo {
+//   margin: 0;
+// }
 
 .links {
   display: flex;
@@ -35,7 +48,7 @@
       width: 15px;
       height: 15px;
 
-      background-color: var(--secondaryContainer);
+      background-color: var(--primaryContainer);
       border-radius: 10px;
       color: black;
       font-size: 9px;

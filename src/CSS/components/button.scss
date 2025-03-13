@@ -24,6 +24,7 @@ button {
   // .btn-primary, .btn-secondary, etc...
   .btn-#{$color-role} {
     @extend .#{$color-role}-container;
+    box-shadow: none;
 
     &:hover {
       background-color: color-mix(

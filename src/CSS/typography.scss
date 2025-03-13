@@ -37,6 +37,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Poppins", sans-serif;
   margin-top: calc($line-height-body * ts.$body-font-size * 2);
   margin-bottom: calc($line-height-body * ts.$body-font-size);
   line-height: $line-height-titles;

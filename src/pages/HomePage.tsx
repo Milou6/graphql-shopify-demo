@@ -86,7 +86,7 @@ function HomePage() {
 
   return (
     <div className="centered-page">
-      <h3>Our Latest Articles</h3>
+      <h3 className="rampart-one-regular display-small">Our Latest Articles</h3>
 
       <div className="grid-products">
         {data?.products &&
@@ -108,7 +108,7 @@ function HomePage() {
           ))}
       </div>
 
-      <h3>Featured Collection</h3>
+      <h3 className="rampart-one-regular">Featured Collection</h3>
 
       {lastCollection && (
         <div

@@ -1,3 +1,5 @@
+@use "@/CSS/_variables" as *;
+
 .detailed-product {
   display: flex;
   gap: 20px;
@@ -51,7 +53,6 @@
 
     .title {
       margin: 0;
-      white-space: nowrap;
     }
 
     .variant-details {
@@ -66,10 +67,10 @@
 
       button {
         // min-width: 300px;
-        border: 1px solid black;
+        // border: 1px solid black;
         border-radius: 5px;
         padding: 0px 10px;
-        height: 45px;
+        height: 40px;
       }
     }
   }
