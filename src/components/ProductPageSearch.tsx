@@ -1,5 +1,6 @@
 import { gql, useQuery } from "@apollo/client";
 import { useState, useEffect } from "react";
+import { Product } from "../__generated__/graphql";
 
 // GraphQL query for searching products
 const SEARCH_PRODUCTS_QUERY = gql(`
@@ -66,7 +67,7 @@ const ProductPageSearch = () => {
 
       <div>
         {data?.products.edges.length > 0 ? (
-          data.products.edges.map(({ node }) => (
+          data.products.edges.map((node: Product) => (
             <div
               key={node.id}
               style={{ borderBottom: "1px solid #ddd", padding: "10px" }}

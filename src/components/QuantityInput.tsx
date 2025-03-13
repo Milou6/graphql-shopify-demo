@@ -37,7 +37,10 @@ const QuantityInput = ({
         </button>
       </div>
 
-      <button className="btn-delete" onClick={() => linesRemove([line.id])}>
+      <button
+        className="btn-delete"
+        onClick={() => linesRemove([line.id as string])}
+      >
         <img src="/icons/delete.svg" alt="remove cart item" />
       </button>
     </div>

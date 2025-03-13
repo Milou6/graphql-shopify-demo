@@ -1,4 +1,4 @@
-import ProductPageSearch from "../components/ProductPageSearch";
+import ProductPageSearch from "../components/ProductPageSearch.tsx";
 
 function SearchPage() {
   return (

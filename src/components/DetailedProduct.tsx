@@ -1,12 +1,10 @@
 import { AddToCartButton, useProduct } from "@shopify/hydrogen-react";
 import "./DetailedProduct.scss";
+import { ProductVariant } from "../__generated__/graphql";
 
 const DetailedProduct = () => {
   const { product, variants, setSelectedVariant, selectedVariant } =
     useProduct();
-
-  //   console.log(product);
-  console.log(variants);
 
   return (
     <>
@@ -15,7 +13,7 @@ const DetailedProduct = () => {
           <div className="product-image-container">
             <img
               src={selectedVariant?.image?.url}
-              alt={selectedVariant?.image?.altText}
+              alt={selectedVariant?.image?.altText as string}
             />
 
             {variants && variants.length > 1 && (
@@ -23,11 +21,13 @@ const DetailedProduct = () => {
                 {variants?.map((variant) => (
                   <button
                     key={variant?.id}
-                    onClick={() => setSelectedVariant(variant)}
+                    onClick={() =>
+                      setSelectedVariant(variant as ProductVariant)
+                    }
                   >
                     <img
                       src={variant?.image?.url}
-                      alt={variant?.image?.altText}
+                      alt={variant?.image?.altText as string}
                     />
                   </button>
                 ))}
