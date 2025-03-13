@@ -82,11 +82,10 @@ function HomePage() {
     }
   );
   const lastCollection = lastCollectionData?.collections.edges[0].node;
-  // console.log(data);
 
   return (
     <div className="centered-page">
-      <h3 className="rampart-one-regular display-small">Our Latest Articles</h3>
+      <h3 className="rampart-one-regular display-small">Latest Articles</h3>
 
       <div className="grid-products">
         {data?.products &&
@@ -119,10 +118,6 @@ function HomePage() {
         >
           <h6 className="title">{lastCollection.title}</h6>
           <p className="body-small description">{lastCollection.description}</p>
-          {/* <img
-            src={lastCollectionData.collections.edges[0].node.image?.url}
-            alt=""
-          /> */}
         </div>
       )}
     </div>
