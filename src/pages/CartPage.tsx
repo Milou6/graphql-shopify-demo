@@ -11,22 +11,6 @@ const CartPage = () => {
 
   return (
     <div className="centered-page cart-page">
-      {/* <h1>Your cart</h1>
-      <h2>Your cart</h2>
-      <h3>Your cart</h3>
-      <h4>Your cart</h4>
-      <h5>Your cart</h5>
-      <h6>Your cart</h6>
-      <div className="title-large">Title Text</div>
-      <div className="title-medium">Title Text</div>
-      <div className="title-small">Title Text</div>
-      <div className="body-large">Body Text</div>
-      <div className="body-medium">Body Text</div>
-      <div className="body-small">Body Text</div>
-      <div className="label-large">Label Text</div>
-      <div className="label-medium">Label Text</div>
-      <div className="label-small">Label Text</div> */}
-
       <div className="cart-header">
         <h3 className="title">Your Cart</h3>
         <Link className="label-large" to="/">
@@ -35,7 +19,12 @@ const CartPage = () => {
       </div>
 
       {/* empty cart */}
-      {lines && lines.length === 0 && <p>Your cart is empty.</p>}
+      {lines && lines.length === 0 && (
+        <div className="empty-cart">
+          <img src="/empty-cart.svg" alt="Empty cart icon" />
+          <p className="text-secondary body-medium">Your cart is empty.</p>
+        </div>
+      )}
 
       {/* non-empty cart */}
       {lines && lines.length > 0 && (

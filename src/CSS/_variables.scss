@@ -6,7 +6,6 @@ $body-margin-desktop: 30px;
 // Breakpoints
 $bp-mobile: 480px;
 $bp-tablet: 770px;
-// $bp-tablet: 990px;
 $bp-desktop: 1400px;
 
 // Borders
@@ -15,3 +14,12 @@ $border-radius: 10px;
 
 // Custom
 $header-height: 50px;
+
+// Products
+:root {
+  --grid-horiz-space: calc((100% - 3 * 10px) / 4);
+
+  @media screen and (max-width: $bp-mobile) {
+    --grid-horiz-space: calc((100% - 1 * 10px) / 2);
+  }
+}

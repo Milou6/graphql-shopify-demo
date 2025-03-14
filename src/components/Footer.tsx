@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Footer.scss"; // Import the CSS file
+import "./Footer.scss";
 
 export default function Footer() {
   return (
@@ -32,7 +32,6 @@ export default function Footer() {
           </Link>
         </nav>
 
-        {/* Right Section - Social Media Icons */}
         <div className="footer-social">
           <a href="/">
             <img

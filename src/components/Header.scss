@@ -20,10 +20,6 @@
   }
 }
 
-// .logo {
-//   margin: 0;
-// }
-
 .links {
   display: flex;
   gap: 20px;
@@ -36,6 +32,7 @@
 
   .cart-icon {
     position: relative;
+    margin-top: 6px;
 
     .cart-qty-indicator {
       display: flex;

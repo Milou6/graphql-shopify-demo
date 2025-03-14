@@ -2,7 +2,7 @@ import { useQuery } from "@apollo/client";
 import { gql } from "../__generated__";
 import QueryResult from "../components/QueryResult";
 import { ProductProvider } from "@shopify/hydrogen-react";
-import ShopProduct from "../components/ShopProduct";
+import { ShopProduct, ShopProductPlaceholder } from "../components/ShopProduct";
 
 import "./HomePage.scss";
 import {
@@ -88,6 +88,11 @@ function HomePage() {
       <h3 className="rampart-one-regular display-small">Latest Articles</h3>
 
       <div className="grid-products">
+        {loading &&
+          Array.from({ length: 8 }).map((_, index) => (
+            <ShopProductPlaceholder key={index}></ShopProductPlaceholder>
+          ))}
+
         {data?.products &&
           data?.products.edges.map(({ node: product }) => (
             <QueryResult

@@ -2,7 +2,6 @@ import { gql, useQuery } from "@apollo/client";
 import { useState, useEffect } from "react";
 import { Product } from "../__generated__/graphql";
 
-// GraphQL query for searching products
 const SEARCH_PRODUCTS_QUERY = gql(`
   query SearchPageProducts($query: String!) {
     products(first: 10, query: $query) {
@@ -28,21 +27,19 @@ const ProductPageSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
 
-  // Debounce input to limit API calls
   useEffect(() => {
     const handler = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm);
-    }, 500); // 500ms debounce delay
+    }, 500);
 
     return () => clearTimeout(handler);
   }, [searchTerm]);
 
-  // Apollo Client query (fetches only when there's a search term)
   const { data, loading, error } = useQuery(SEARCH_PRODUCTS_QUERY, {
     variables: {
       query: debouncedSearchTerm ? `title:*${debouncedSearchTerm}*` : "",
     },
-    skip: !debouncedSearchTerm, // Prevents unnecessary API calls
+    skip: !debouncedSearchTerm,
   });
 
   return (

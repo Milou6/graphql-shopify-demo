@@ -7,10 +7,6 @@ interface QueryResultProps {
   data?: unknown;
 }
 
-/**
- * Query Results conditionally renders Apollo useQuery hooks states:
- * loading, error or its children when data is ready
- */
 function QueryResult(props: PropsWithChildren<QueryResultProps>) {
   const { loading, error, data } = props;
 

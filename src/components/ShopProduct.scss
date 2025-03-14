@@ -1,12 +1,5 @@
 @use "@/CSS/_variables" as *;
-
-:root {
-  --grid-horiz-space: calc((100% - 3 * 10px) / 4);
-
-  @media screen and (max-width: $bp-mobile) {
-    --grid-horiz-space: calc((100% - 1 * 10px) / 2);
-  }
-}
+@use "@/CSS/_utils" as *;
 
 .shop-product {
   display: flex;
@@ -16,7 +9,7 @@
   img {
     width: 100%;
     aspect-ratio: 1/1;
-    border-radius: 10px;
+    border-radius: 20px;
   }
 
   &:hover {
@@ -30,4 +23,33 @@
 
 .prod-variants {
   display: flex;
+}
+
+.product-skeleton {
+  display: flex;
+  flex-direction: column;
+  width: var(--grid-horiz-space);
+
+  .skeleton-image {
+    @include placeholder-pulse;
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+  }
+
+  .skeleton-title {
+    @include placeholder-pulse;
+    margin: 6px 0;
+    height: 20px;
+    width: 80%;
+    border-radius: 5px;
+  }
+
+  .skeleton-price {
+    @include placeholder-pulse;
+    margin: 2px 0;
+    height: 20px;
+    width: 40%;
+    border-radius: 5px;
+  }
 }

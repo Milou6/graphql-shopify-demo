@@ -107,6 +107,18 @@
     }
   }
 
+  .empty-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 300px;
+      max-width: 100%;
+    }
+  }
+
   .mobile-only {
     @media screen and (min-width: 850px) {
       display: none !important;

@@ -6,7 +6,6 @@ import "./ShopProduct.scss";
 
 function ShopProduct() {
   const { product, variants } = useProduct();
-
   const { id: productId } = parseGid(product?.id);
 
   const img1: Image | undefined = product?.images?.edges?.[0]?.node as
@@ -30,4 +29,14 @@ function ShopProduct() {
   );
 }
 
-export default ShopProduct;
+function ShopProductPlaceholder() {
+  return (
+    <div className="product-skeleton">
+      <div className="skeleton-image" />
+      <div className="skeleton-title" />
+      <div className="skeleton-price" />
+    </div>
+  );
+}
+
+export { ShopProduct, ShopProductPlaceholder };

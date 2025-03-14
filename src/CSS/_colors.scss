@@ -44,4 +44,5 @@
 }
 
 // used in @each loops, mixins, etc
-$material-roles: 'primary' 'onPrimary', 'secondary' 'onSecondary', 'tertiary' 'onTertiary';
+$material-roles: "primary" "onPrimary", "secondary" "onSecondary",
+  "tertiary" "onTertiary";

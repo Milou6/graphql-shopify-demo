@@ -31,7 +31,7 @@ const SEARCH_PRODUCTS_QUERY = gql(`
   }
 `);
 
-const ProductSearch2 = () => {
+const ProductSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -131,4 +131,4 @@ const ProductSearch2 = () => {
   );
 };
 
-export default ProductSearch2;
+export default ProductSearch;

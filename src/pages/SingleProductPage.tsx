@@ -46,11 +46,7 @@ const SingleProductPage = () => {
     variables: { id: globalProductId },
   });
 
-  // if (loading) return <p>Loading...</p>;
-  // if (error) return <p>Error: {error.message}</p>;
-
   const product = data?.product;
-  // console.log(product);
 
   return (
     <div className="centered-page">

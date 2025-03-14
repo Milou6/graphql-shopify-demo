@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
-import "./Header.scss";
 import { useCart } from "@shopify/hydrogen-react";
+
+import "./Header.scss";
 import ProductSearch from "./ProductSearch";
 
 const Header = () => {
   const { lines } = useCart();
+
   const totalCartItems =
     lines?.reduce((sum, line) => sum + (line?.quantity || 0), 0) || 0;
 
@@ -16,7 +18,6 @@ const Header = () => {
           src="/logo-no-background.svg"
           alt="SnowStore logo"
         />
-        {/* <h4 className="rampart-one-regular logo">Shopify Store</h4> */}
       </Link>
 
       <ProductSearch></ProductSearch>
